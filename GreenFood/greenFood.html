@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>GreenFood</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <header id="navbar">
+                <a class="logo" href="#">Good<span>Food</span></a>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <span class="menuIcon" onclick="menuToogle();"></span>
+            </header>
+            <div class="content">
+                <div class="bannerText" id="slideshowText">
+                    <div class="active">
+                        <h2>EAT Healthy<br>
+                            Stay Healthy</h2>
+                        <p>On découvre Minecraft avec le RTX et on en profite pour visiter un parc d’attraction et résoudre des énigmes dans des temples incas
+                            On a capturé sur l’early access mais la beta est désormais dispo, plus d'infos sur </p>
+                        <a href="#">Read More</a>
+                    </div>
+                    <div>
+                        <h2>EAT Your<br>
+                            Veggies</h2>
+                        <p>Merci à MSI, Nvidia Geforce France et Microsoft de nous avoir donné cette exclusivité
+                            On a capturé sur l’early access mais la beta est désormais dispo, plus d'infos sur </p>
+                        <a href="#">Read More</a>
+                    </div>
+                    <div>
+                        <h2>Good Food<br>
+                            Good Mood</h2>
+                        <p>On découvre Minecraft avec le RTX et on en profite pour visiter un parc d’attraction et résoudre des énigmes dans des temples incas
+                            Merci à MSI, Nvidia Geforce France et Microsoft de nous avoir donné cette exclusivité</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div class="bannerImage" id="slideshow">
+                    <img src="vegetable-salad-on-white-plate-2862154.jpg" class="active">
+                    <img src="sliced-tomato-and-avocado-on-white-plate-1143754.jpg">
+                    <img src="appetizer-close-up-cuisine-delicious-434258.jpg">
+                </div>
+            </div>
+            <div class="icons">
+                <ul class="sci">
+                    <li><a href="#"><img src="facebook-logo.png"></a></li>
+                    <li><a href="#"><img src="twitter.png"></a></li>
+                    <li><a href="#"><img src="instagram.png"></a></li>
+                </ul>
+                <ul class="controls">
+                    <li><a href="#"><img src="left.png" onclick="prevSlide();prevSlideText();"></a></li>
+                    <li><a href="#"><img src="right.png" onclick="nextSlide();nextSlideText();"></a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var slideshow = document.getElementById('slideshow');
+            var slides = slideshow.getElementsByTagName('img');
+            var index = 0;
+
+            function nextSlide() {
+                slides[index].classList.remove('active');
+                index = (index + 1) % slides.length;
+                slides[index].classList.add('active');
+            }
+
+            function prevSlide() {
+                slides[index].classList.remove('active');
+                index = (index - 1 + slides.length) % slides.length;
+                slides[index].classList.add('active');
+            }
+
+            var slideshowText = document.getElementById('slideshowText');
+            var slidesText = slideshowText.getElementsByTagName('div');
+            var i = 0;
+
+            function nextSlideText() {
+                slidesText[i].classList.remove('active');
+                i = (i + 1) % slidesText.length;
+                slidesText[i].classList.add('active');
+            }
+
+            function prevSlideText() {
+                slidesText[i].classList.remove('active');
+                i = (i - 1 + slidesText.length) % slidesText.length;
+                slidesText[i].classList.add('active');
+            }
+
+            function menuToogle() {
+                var nav = document.getElementById('navbar');
+                nav.classList.toggle('active');
+            }
+        </script>
+    </body>
+</html>
