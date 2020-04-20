@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ScrollMagic</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <section>
+            <span class="skewed"></span>
+        </section>
+        <script>
+            var skewed = document.querySelector('.skewed');
+            window.addEventListener('scroll', function () {
+                var value = -10 + window.scrollY/60;
+                skewed.style.transform = "skewY("+ value +"deg)"
+            })
+        </script>
+
+        Ici du text bidon
+    </body>
+</html>
