@@ -30,3 +30,23 @@ section .skewed
     transform: skewY(-10deg);
     transform-origin: top left;
 }
+
+.content
+{
+    position: absolute;
+    top: 100%;
+}
+
+.content .title
+{
+    font-size: 40px;
+    font-weight: 800;
+    padding: 40px;
+}
+
+.content .text
+{
+    font-size: 22px;
+    padding: 20px;
+    text-align: justify;
+}
