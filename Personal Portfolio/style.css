@@ -34,6 +34,50 @@ header
     flex-wrap: wrap;
 }
 
+.section-title
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+
+.section-title h1
+{
+    display: inline-block;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 10px;
+    position: relative;
+}
+
+.section-title h1::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 30%;
+    height: 2px;
+    background-color: #febd01;
+}
+
+.text-center
+{
+    text-align: center !important;
+}
+
+.text-left
+{
+    text-align: left !important;
+}
+
+.text-right
+{
+    text-align: right !important;
+}
+
 /* Header section */
 header .row
 {
@@ -214,35 +258,6 @@ header .navbar ul li a.active::before
     background-color: #ffffff;
 }
 
-.about-me .section-title
-{
-    flex: 0 0 100%;
-    max-width: 100%;
-    margin-bottom: 40px;
-}
-
-.about-me .section-title h1
-{
-    display: inline-block;
-    font-size: 35px;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #000000;
-    margin: 0 0 10px;
-    position: relative;
-}
-
-.about-me .section-title h1::before
-{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 30%;
-    height: 2px;
-    background-color: #febd01;
-}
-
 .text-uppercase
 {
     text-transform: uppercase!important;
@@ -382,4 +397,31 @@ header .navbar ul li a.active::before
     color: black;
 }
 
+/*Our services*/
 
+.services
+{
+    background-color: #f5f8fd;
+    padding: 100px 0;
+}
+
+.services .section-title h1::before
+{
+    left: 30%;
+}
+
+.services .service-content
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: red;
+}
+
+.services .service-content .box
+{
+    flex: 0 0 calc(33.33% - 15px);
+    background-color: blue;
+}
