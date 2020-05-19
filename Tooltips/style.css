@@ -1,0 +1,50 @@
+*
+{
+
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    min-height: 100vh;
+    background-color: black;
+}
+
+.content
+{
+    color: wheat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Doit etre relatif pour permettre le position absolute du tooltip*/
+.container[data-tool-tip]
+{
+    position: relative;
+}
+
+.container[data-tool-tip]::after
+{
+    content: attr(data-tool-tip);
+    display: block;
+    position: absolute;
+    background-color: teal;
+    color: thistle;
+    padding: 1em 3em;
+    border-radius: 5px;
+    font-size: .8em;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    transform: scale(0);
+    transition: transform ease-out 50ms,
+                top ease-out 50ms;
+}
+
+.container[data-tool-tip]:hover::after
+{
+    transform: scale(1);
+    top: 150%;
+}
